@@ -1,2 +1,3 @@
-# udacity-fe-web-dev
-Udacity Repository for Front End Web Developer Course
+# Udacity Nanodegree
+
+## Front End Web Developer
