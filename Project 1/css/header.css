@@ -1,0 +1,65 @@
+@import "variables.css";
+
+/* ---------------- HEADER ------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* ----------------- Logo -------------------- */
+.logo {
+    display: flex;
+    gap: 10px;
+    margin: 0 10px;
+    user-select: none;
+}
+
+.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand {
+    font-family: "Pacifico", cursive;
+    font-size: 1.25em;
+    color: var(--color-teal-green);
+}
+
+/* ----------------- Menu -------------------- */
+.menu {
+    margin: 0 10px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu a {
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--color-coral-red);
+}
+
+.menu-toggle {
+    display: none;
+    margin: 0 10px;
+}
+
+/* --------- Search, Log in, Sign up ----------- */
+.user {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#login {
+    margin: 0 10px;
+}

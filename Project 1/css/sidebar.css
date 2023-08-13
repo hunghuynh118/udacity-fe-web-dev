@@ -1,0 +1,15 @@
+@import "variables.css";
+
+/*----------------- SIDE BAR --------------------*/
+.sidebar {
+    width: 308px;
+    border-left: 1px solid var(--color-pale-green);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar .post-info {
+    padding: 0;
+}

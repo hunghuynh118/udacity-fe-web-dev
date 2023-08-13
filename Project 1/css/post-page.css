@@ -1,0 +1,66 @@
+@import "variables.css";
+
+/* ---------------- POST PAGE --------------- */
+.post-page {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.post-body-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.post-content img {
+    width: 80%;
+    height: auto;
+}
+
+.related-posts {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* ----------- Author ------------- */
+.author {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    max-width: 800px;
+}
+
+.author-avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid var(--color-teal-green);
+    background-color: var(--color-pale-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.author-avatar i {
+    scale: 3;
+    color: var(--color-teal-green);
+}
+
+.author-info {
+    flex: 1;
+}
+
+.author-info .post-author {
+    font-size: 1.5em;
+}

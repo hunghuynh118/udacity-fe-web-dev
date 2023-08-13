@@ -1,0 +1,26 @@
+@import "variables.css";
+
+/* ------------------- HERO ------------------- */
+.hero {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hero .post-container {
+    max-width: 1200px;
+}
+
+.hero .post-image {
+    width: 30%;
+    height: auto;
+}
+
+.hero .post-title {
+    font-size: 2em;
+}
+
+.hero .social-logo {
+    margin-top: 10px;
+    padding-left: 5px;
+}

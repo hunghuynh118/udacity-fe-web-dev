@@ -1,0 +1,109 @@
+@import "variables.css";
+
+/* -------------------- POST ----------------- */
+.post-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.post-image {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.post-image img {
+    width: 100%;
+    object-fit: scale-down;
+}
+
+.post-info {
+    flex: 1;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-break: break-word;
+}
+
+.post-title {
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.post-title:hover {
+    color: var(--color-coral-red);
+}
+
+.post-meta {
+    margin: 10px 0;
+}
+
+.post-author {
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.post-author:hover {
+    color: var(--color-coral-red);
+}
+
+.post-category {
+    display: inline-block;
+    padding: 3px 10px;
+    margin-left: 10px;
+    border: 2px solid var(--color-coral-red);
+    color: var(--color-charcoal);
+    border-radius: 20px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.post-category:hover {
+    background-color: var(--color-coral-red);
+}
+
+.post-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 72px;
+    line-height: 24px;
+}
+
+/* -------------------- MAIN AREA ---------------------- */
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    max-width: 900px;
+    padding: 20px;
+}
+
+hr {
+    border: none;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-pale-green);
+}
+
+.post-group-header {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: var(--color-teal-green);
+    color: var(--color-ghost-white);
+}
