@@ -17,6 +17,11 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    flex-direction: column;
+}
+
+.post-body-image figcaption {
+    margin-top: 10px;
 }
 
 .post-content img {
@@ -33,7 +38,7 @@
 /* ----------- Author ------------- */
 .author {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 20px;
@@ -49,7 +54,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
 }
 
 .author-avatar i {
@@ -57,10 +61,30 @@
     color: var(--color-teal-green);
 }
 
-.author-info {
-    flex: 1;
+.author-name {
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
-.author-info .post-author {
-    font-size: 1.5em;
+blockquote {
+    width: 80%;
+    margin: 20px auto;
+    font-style: italic;
+    padding: 20px 10px 10px 30px;
+    border-left: 8px solid var(--color-teal-green);
+    background: #ededed;
+    position: relative;
+}
+
+blockquote::before {
+    content: "\201C";
+    color: var(--color-teal-green);
+    font-size: 3em;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+blockquote::after {
+    content: "";
 }
