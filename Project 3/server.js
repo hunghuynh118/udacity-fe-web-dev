@@ -39,5 +39,5 @@ app.post("/add", (req, res) => {
         content: req.body.content,
     };
     console.log(projectData);
-    res.send("Data saved");
+    res.send({ message: "Data saved" });
 });
