@@ -25,3 +25,19 @@ const port = 3030;
 const server = app.listen(port, () => {
     console.log(`Listening on port ${port} ...`);
 });
+
+// GET route
+app.get("/all", (req, res) => {
+    res.send(projectData);
+});
+
+// POST route
+app.post("/add", (req, res) => {
+    projectData = {
+        date: req.body.date,
+        temp: req.body.temp,
+        content: req.body.content,
+    };
+    console.log(projectData);
+    res.send("Data saved");
+});
