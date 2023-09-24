@@ -1,5 +1,5 @@
 /* Global Variables */
-const apiKey = "5249cf40261029de29251eefd00fc8df";
+const apiKey = "";
 const baseGeoUrl = "http://api.openweathermap.org/geo/1.0/zip";
 const baseWeatherUrl = "https://api.openweathermap.org/data/3.0/onecall";
 
