@@ -46,5 +46,6 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false,
         }),
+        new MiniCssExtractPlugin({ filename: "[name].css" }),
     ],
 };

@@ -4,6 +4,7 @@ dotenv.config();
 
 const path = require("path");
 const express = require("express");
+const fetch = require("node-fetch");
 const mockAPIResponse = require("./mockAPI.js");
 
 // Start up an instance of app
@@ -54,9 +55,12 @@ app.post("/add", async (req, res) => {
     console.log(`Input url: ${data.url}`);
 
     // Fetch data from API
-    const newData = await fetch(apiUrl, { method: "POST" });
+    const newData = await fetch(apiUrl, {
+        method: "POST",
+    });
 
     try {
+        console.log(newData);
         const result = await newData.json();
         console.log(result);
         res.send(result);
