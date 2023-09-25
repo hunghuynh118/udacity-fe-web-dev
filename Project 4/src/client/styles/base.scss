@@ -12,3 +12,12 @@ section {
     max-width: 800px;
     margin: 50px auto;
 }
+
+.results {
+    margin-top: 20px;
+}
+
+#invalid {
+    display: none;
+    color: darkred;
+}

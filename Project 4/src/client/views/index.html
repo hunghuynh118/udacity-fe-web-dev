@@ -3,43 +3,43 @@
     <head>
         <meta charset="utf-8" />
         <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css" />
-        <link rel="stylesheet" href="/styles/base.css" />
-        <link rel="stylesheet" href="/styles/header.css" />
-        <link rel="stylesheet" href="/styles/form.css" />
-        <link rel="stylesheet" href="/styles/footer.css" />
     </head>
 
     <body>
         <header>
             <div class="">Logo</div>
-            <div class="">navigation</div>
+            <div class="">Navigation</div>
         </header>
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
+                <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input
-                        id="name"
+                        id="url"
                         type="text"
-                        name="input"
+                        name="url"
                         value=""
-                        onblur="onBlur()"
-                        placeholder="Name"
+                        placeholder="Enter an url"
                     />
+                    <div id="invalid">Invalid URL!</div>
                     <input
                         type="submit"
                         name=""
                         value="submit"
-                        onclick="return handleSubmit(event)"
-                        onsubmit="return handleSubmit(event)"
+                        onclick="return Client.handleSubmit(event)"
+                        onsubmit="return Client.handleSubmit(event)"
                     />
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <strong>Sentiment Analysis Results:</strong>
+                <div class="results">
+                    <p>Agreement: <span id="agreement"></span></p>
+                    <p>Subjectivity: <span id="subjectivity"></span></p>
+                    <p>Confident: <span id="confidence"></span></p>
+                    <p>Irony: <span id="irony"></span></p>
+                </div>
             </section>
         </main>
 
