@@ -60,9 +60,8 @@ app.post("/add", async (req, res) => {
     });
 
     try {
-        console.log(newData);
         const result = await newData.json();
-        console.log(result);
+        //console.log(result);
         res.send(result);
     } catch (error) {
         console.log("error", error);

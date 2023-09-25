@@ -1,5 +1,6 @@
 async function handleSubmit(event) {
     event.preventDefault();
+    console.log(event);
 
     // check what text was put into the form field
     const formText = document.getElementById("url").value;
