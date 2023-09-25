@@ -58,6 +58,7 @@ app.post("/add", async (req, res) => {
 
     try {
         const result = await newData.json();
+        console.log(result);
         res.send(result);
     } catch (error) {
         console.log("error", error);
