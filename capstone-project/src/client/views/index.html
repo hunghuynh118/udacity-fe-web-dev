@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Travel Planner</title>
+        <link rel="stylesheet" href="../styles/style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">Travel Planner</div>
+        </header>
+        <main>
+            <section class="hero-section">
+                <p>Make your trip more enjoyable</p>
+            </section>
+            <section class="search-section">
+                <form class="search-form" onsubmit="">
+                    <div class="form-group">
+                        <label class="destination-lbl" for="destination"
+                            >Your Destination</label
+                        >
+                        <input
+                            id="destination"
+                            name="destination"
+                            type="text"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label class="departure-lbl" for="departure"
+                            >Departure Date</label
+                        >
+                        <input
+                            id="departure"
+                            name="departure"
+                            type="date"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            class="btn search-btn"
+                            type="submit"
+                            value="Search"
+                        />
+                    </div>
+                </form>
+            </section>
+            <section class="result-section">Result</section>
+            <section class="trip-section">Trips</section>
+        </main>
+        <footer><p>Travel Planner &copy;</p></footer>
+    </body>
+</html>
