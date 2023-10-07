@@ -1,22 +1,14 @@
+const common = require("./webpack.common.js");
+const { merge } = require("webpack-merge");
 const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = {
-    entry: ["./src/client/index.js"],
+module.exports = merge(common, {
     mode: "development",
     devtool: "source-map",
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: "babel-loader",
-            },
-            {
-                test: /\.s[ac]ss$/i,
+                test: /\.scss$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
         ],
@@ -28,20 +20,15 @@ module.exports = {
         library: "Client",
         clean: true,
     },
-    optimization: {
-        minimizer: [new CssMinimizerPlugin()],
-        minimize: true,
+    devServer: {
+        static: {
+            directory: path.join(__dirname, "dist"),
+        },
+        compress: true,
+        port: 8001,
+        proxy: {
+            "/getGeonamesLocation": "http://localhost:8000",
+            "/getWeatherbitForecast": "http://localhost:8000",
+        },
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/client/views/index.html",
-            filename: "./index.html",
-        }),
-        new CleanWebpackPlugin({
-            dry: true,
-            verbose: false,
-            cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false,
-        }),
-    ],
-};
+});
