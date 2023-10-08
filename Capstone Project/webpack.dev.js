@@ -25,7 +25,11 @@ module.exports = merge(common, {
             directory: path.join(__dirname, "dist"),
         },
         compress: true,
-        port: 3001,
-        proxy: {},
+        port: 3000,
+        proxy: {
+            "/get-geonames-location": "http://localhost:3001",
+            "/get-weatherbit-forecast": "http://localhost:3001",
+            "/get-pixabay-image": "http://localhost:3001",
+        },
     },
 });

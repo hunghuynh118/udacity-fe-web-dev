@@ -5,7 +5,7 @@ const cors = require("cors");
 const handleApi = require("./handleApi");
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 let savedTrips = [];
 
@@ -22,3 +22,9 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
     res.sendFile("dist/index.html");
 });
+
+app.post("/get-geonames-location", handleApi.getGeonamesLocation);
+
+app.post("/get-weatherbit-forecast", handleApi.getWeatherbitForecast);
+
+app.post("/get-pixabay-image", handleApi.getPixabayImage);

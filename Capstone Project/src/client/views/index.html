@@ -17,14 +17,17 @@
                 <form
                     class="search-form"
                     onsubmit="return Client.handleSubmit(event)"
+                    oninput="return Client.validateUserInput()"
                 >
                     <div class="form-group">
                         <label for="location">Your Destination</label>
-                        <input id="location" name="location" type="text" />
+                        <input id="location" type="text" />
+                        <div id="location-error" class="message"></div>
                     </div>
                     <div class="form-group">
                         <label for="date">Departure Date</label>
-                        <input id="date" name="date" type="date" />
+                        <input id="date" type="date" />
+                        <div id="date-error" class="message"></div>
                     </div>
                     <div class="form-group">
                         <input
