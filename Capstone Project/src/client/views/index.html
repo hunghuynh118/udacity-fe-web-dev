@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Travel Planner</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">Travel Planner</div>
+        </header>
+        <main>
+            <section class="hero-section">
+                <p>Make your trip more enjoyable</p>
+            </section>
+            <section class="search-section">
+                <form
+                    class="search-form"
+                    onsubmit="return Client.handleSubmit(event)"
+                >
+                    <div class="form-group">
+                        <label for="location">Your Destination</label>
+                        <input id="location" name="location" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Departure Date</label>
+                        <input id="date" name="date" type="date" />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            class="btn search-btn"
+                            type="submit"
+                            value="Search"
+                        />
+                    </div>
+                </form>
+            </section>
+            <section class="result-section">Result</section>
+            <section class="trip-section">Trips</section>
+        </main>
+        <footer><p>Travel Planner &copy;</p></footer>
+    </body>
+</html>
