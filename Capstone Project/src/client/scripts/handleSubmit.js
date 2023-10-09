@@ -53,7 +53,7 @@ const handleSubmit = async event => {
 
     // if there is no data, display placeholder instead
     if (pixabayData.error) {
-        pixabayData.imageUrl = "../media/images/placeholder.jpg";
+        pixabayData.imageUrl = "images/placeholder.jpg";
     }
 
     // calculate remaining days to go
@@ -62,8 +62,8 @@ const handleSubmit = async event => {
     // create an object to save data
     const trip = {
         id: new Date().valueOf(),
-        location,
-        date,
+        location: location.value,
+        date: date.value,
         remainingDays,
         geonamesData,
         weatherbitData,
@@ -74,6 +74,8 @@ const handleSubmit = async event => {
 
     // TODO: post projectData to server
     //const savedTrip = await Client.postData("/save-trip", trip);
+
+    await Client.updateUI(trip);
 };
 
 export { handleSubmit };
