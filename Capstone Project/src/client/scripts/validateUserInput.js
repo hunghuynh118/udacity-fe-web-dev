@@ -11,9 +11,8 @@ const validateUserInput = () => {
 
     if (!location.value) {
         location.classList.add("error");
-        locationError.innerHTML = "Please enter your destination!";
+        locationError.innerHTML = "Please enter your destination";
         isInputValid = false;
-        console.log("Missing location");
     } else {
         location.classList.remove("error");
         locationError.innerHTML = "";
@@ -21,9 +20,8 @@ const validateUserInput = () => {
 
     if (!date.value) {
         date.classList.add("error");
-        dateError.innerHTML = "Please enter your departure date!";
+        dateError.innerHTML = "Please enter your departure date";
         isInputValid = false;
-        console.log("Missing date");
     } else {
         date.classList.remove("error");
         dateError.innerHTML = "";

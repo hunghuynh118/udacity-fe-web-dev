@@ -23,6 +23,7 @@ const getGeonamesLocation = async (req, res) => {
     const url = `${GEONAMES_BASE_URL}?q=${location}&username=${GEONAMES_USERNAME}`;
 
     const response = await axios.get(url);
+    console.log("///////////////////////////" + response.data);
 
     if (response.data.geonames.length === 0) {
         res.send({
@@ -36,21 +37,31 @@ const getGeonamesLocation = async (req, res) => {
 };
 
 // Get weatherbit forecase
-// The request format: { lat, lon, remainingDays }
+// The request format: { lat, lon, date }
 // The response format: { description, icon, temp, valid_date }
 const getWeatherbitForecast = async (req, res) => {
-    const { lat, lon, remainingDays } = req.body;
-    const url = `${WEATHERBIT_BASE_URL}?lat=${lat}&lon=${lon}&days=${remainingDays}&key=${WEATHERBIT_API_KEY}`;
+    const { lat, lon, date } = req.body;
+    const url = `${WEATHERBIT_BASE_URL}?lat=${lat}&lon=${lon}&key=${WEATHERBIT_API_KEY}`;
 
     const response = await axios.get(url);
 
-    const {
-        weather: { description, icon },
-        temp,
-        valid_date,
-    } = response.data.data[response.data.data.length - 1];
+    for (const item of response.data.data) {
+        if (item.valid_date === date) {
+            const {
+                weather: { description, icon },
+                temp,
+                valid_date,
+            } = item;
 
-    res.send({ description, icon, temp, valid_date });
+            res.send({ description, icon, temp, valid_date });
+            return;
+        }
+    }
+
+    res.send({
+        error: true,
+        message: "Weather forecast data not found",
+    });
 };
 
 // Get pixabay image
