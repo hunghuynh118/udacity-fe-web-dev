@@ -30,6 +30,9 @@ module.exports = merge(common, {
             "/get-geonames-location": "http://localhost:3001",
             "/get-weatherbit-forecast": "http://localhost:3001",
             "/get-pixabay-image": "http://localhost:3001",
+            "/get-saved-trips": "http://localhost:3001",
+            "/save-trip": "http://localhost:3001",
+            "/remove-trip": "http://localhost:3001",
         },
     },
 });

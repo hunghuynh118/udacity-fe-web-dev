@@ -42,8 +42,12 @@ const updateUI = (trip, save = true) => {
         </div>
     `;
 
-    const searchResult = document.getElementsByClassName("result-section")[0];
-    searchResult.innerHTML = `<div class="card">${innerCard}</div>`;
+    if (save) {
+        const searchResult =
+            document.getElementsByClassName("result-section")[0];
+        searchResult.innerHTML = `<div class="card">${innerCard}</div>`;
+    }
+    return innerCard;
 };
 
 export { updateUI };

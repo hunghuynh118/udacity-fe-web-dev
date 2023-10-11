@@ -23,7 +23,6 @@ const getGeonamesLocation = async (req, res) => {
     const url = `${GEONAMES_BASE_URL}?q=${location}&username=${GEONAMES_USERNAME}`;
 
     const response = await axios.get(url);
-    console.log("///////////////////////////" + response.data);
 
     if (response.data.geonames.length === 0) {
         res.send({

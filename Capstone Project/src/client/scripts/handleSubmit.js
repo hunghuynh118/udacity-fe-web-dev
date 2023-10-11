@@ -1,3 +1,11 @@
+// Render saved trips, wait for the content to be loaded, otherwise Client is not defined
+document.addEventListener("DOMContentLoaded", async () => {
+    const response = await fetch("/get-saved-trips");
+    const { savedTrips } = await response.json();
+    console.log(savedTrips);
+    Client.renderSavedTrips(savedTrips);
+});
+
 const handleSubmit = async event => {
     event.preventDefault();
 
@@ -48,7 +56,7 @@ const handleSubmit = async event => {
 
     // get pixabay image url
     const pixabayData = await Client.postData("/get-pixabay-image", {
-        location: location.value,
+        location: name,
     });
 
     // if there is no data, display placeholder instead
@@ -70,11 +78,9 @@ const handleSubmit = async event => {
         pixabayData,
     };
 
-    console.log(trip);
+    localStorage.setItem("tempTrip", JSON.stringify(trip));
 
-    // TODO: post projectData to server
-    //const savedTrip = await Client.postData("/save-trip", trip);
-
+    // render result
     await Client.updateUI(trip);
 };
 
