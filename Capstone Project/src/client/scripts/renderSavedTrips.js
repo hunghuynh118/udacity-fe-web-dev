@@ -1,6 +1,7 @@
 const renderSavedTrips = async savedTrips => {
     const savedTripsSection =
         document.getElementsByClassName("trip-section")[0];
+    savedTripsSection.innerHTML = "";
 
     if (savedTrips.length !== 0) {
         let documentFragment = new DocumentFragment();

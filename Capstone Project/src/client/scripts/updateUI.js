@@ -8,9 +8,9 @@ const updateUI = (trip, save = true) => {
                 ${
                     save
                         ? "<h2>" + trip.geonamesData.name + "</h2>"
-                        : "<h4>" + trip.geonamesData.name + "</h4>"
+                        : "<h3>" + trip.geonamesData.name + "</h3>"
                 }
-                <p>Your trip is in ${trip.remainingDays} days time</p>
+                <p>Your trip starts in ${trip.remainingDays} days from now</p>
             </div>
             <div class="card__weather">
                 <div class="card__weather--icon">
@@ -18,7 +18,7 @@ const updateUI = (trip, save = true) => {
                 </div>
                 <div class="card__weather--info">
                     <p class="temp">
-                        ${trip.weatherbitData.temp}<sup>&#8451;</sup>
+                        ${trip.weatherbitData.temp}&deg;C
                     </p>
                     <p>${trip.weatherbitData.description}</p>
                 </div>
@@ -34,8 +34,8 @@ const updateUI = (trip, save = true) => {
                 }">
                     ${
                         save
-                            ? '<i class="far fa-heart"></i>'
-                            : '<i class="far fa-trash-alt"></i>'
+                            ? '<i class="fa-solid fa-heart"></i>'
+                            : '<i class="fa-solid fa-trash-can"></i>'
                     }
                     ${save ? "Save" : "Remove"} Trip
             </button>
@@ -47,6 +47,7 @@ const updateUI = (trip, save = true) => {
             document.getElementsByClassName("result-section")[0];
         searchResult.innerHTML = `<div class="card">${innerCard}</div>`;
     }
+
     return innerCard;
 };
 
