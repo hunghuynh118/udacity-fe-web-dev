@@ -36,7 +36,7 @@ const handleSubmit = async event => {
     }
 
     // extract latitute, longitude and location name from geonames data response
-    const { lat, lon, name } = geonamesData;
+    const { lat, lon, name, geonameId } = geonamesData;
 
     // get weather forecast data
     const weatherbitData = await Client.postData("/get-weatherbit-forecast", {
@@ -69,7 +69,9 @@ const handleSubmit = async event => {
 
     // create an object to save data
     const trip = {
-        id: new Date().valueOf(),
+        id:
+            geonameId +
+            new Date(date.value).toISOString().slice(0, 10).replace(/-/g, ""),
         location: location.value,
         date: date.value,
         remainingDays,

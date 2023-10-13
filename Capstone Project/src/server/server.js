@@ -35,7 +35,7 @@ app.get("/get-saved-trips", (req, res) => {
 
 app.post("/save-trip", (req, res) => {
     const trip = req.body;
-    if (isTripSaved(trip)) {
+    if (isTripSaved(trip.id)) {
         res.send({ error: true, message: "Trip has already existed" });
     } else {
         savedTrips.push(trip);
@@ -43,24 +43,19 @@ app.post("/save-trip", (req, res) => {
     }
 });
 
-app.post("remove-trip", (req, res) => {
-    const trip = req.body;
-    if (isTripSaved(trip)) {
-        savedTrips = savedTrips.filter(
-            obj => obj.location !== trip.location || obj.date !== trip.date
-        );
+app.post("/remove-trip", (req, res) => {
+    const { id } = req.body;
+    if (isTripSaved(id)) {
+        savedTrips = savedTrips.filter(obj => obj.id !== id);
         res.send({ savedTrips });
     } else {
         res.send({ error: true, message: "Trip does not exist" });
     }
 });
 
-const isTripSaved = trip => {
+const isTripSaved = tripId => {
     for (let savedTrip of savedTrips) {
-        if (
-            savedTrip.location === trip.location &&
-            savedTrip.date === trip.date
-        ) {
+        if (savedTrip.id === tripId) {
             return true;
         }
     }

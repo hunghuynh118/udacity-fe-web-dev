@@ -30,8 +30,8 @@ const getGeonamesLocation = async (req, res) => {
             message: "Location not found",
         });
     } else {
-        const { lat, lng, name } = response.data.geonames[0];
-        res.send({ lat, lon: lng, name });
+        const { lat, lng, name, geonameId } = response.data.geonames[0];
+        res.send({ lat, lon: lng, name, geonameId });
     }
 };
 
