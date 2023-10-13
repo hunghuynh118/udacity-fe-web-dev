@@ -41,8 +41,8 @@ body {
     gap: 30px;
 }
 
-input[type="text"],
-input[type="date"] {
+#location,
+#date {
     color: $dark-blue;
     background-color: $white;
     font-size: 1rem;
