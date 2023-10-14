@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("dist"));
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
 
@@ -61,3 +61,5 @@ const isTripSaved = tripId => {
     }
     return false;
 };
+
+module.exports = server;
