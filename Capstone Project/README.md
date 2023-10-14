@@ -15,7 +15,7 @@ Behind the scenes, we will get the coordinates from the [Geonames API](http://ww
 -   Install the latest [NodeJS](https://nodejs.org/en/download) (current version 18.18.0).
 -   Run `npm install` in terminal to install all the required packages.
 -   Create 3 accounts on Geonames, Weatherbit, and Pixabay and get 3 API keys.
--   Rename `.env-SAMPLE` file to `.env` and enter your own API keys.
+-   Rename `env.txt` file to `.env` and enter your own API keys.
 -   Run `npm run build-prod` to build the production webpack.
 -   Run `npm run start` to start the server on port `3001`.
 -   Run `npm run build-dev` to build the development webpack and open the web app on port `3000`.
