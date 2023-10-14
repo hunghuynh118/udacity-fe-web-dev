@@ -35,8 +35,6 @@ Behind the scenes, we will get the coordinates from the [Geonames API](http://ww
 -   Search and display trip, save and remove trip:
     ![save and remove trip](./readme_images/save-and-remove-trip.png)
 
--   Handle cannot save a trip with same location and date.
-
 -   Responsive on tablet:
     ![tablet responsive](./readme_images/full-web-tablet.jpeg)
 
